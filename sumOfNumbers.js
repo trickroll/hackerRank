@@ -10,4 +10,4 @@ function getSum( a,b )
   return ans
 }
 
-console.log(getSum(0,2))
+console.log(getSum(0,2),3)
