@@ -104,10 +104,10 @@ class Table {
                 dealer.receiveCard(dealer.dealCard())
             }
         }
-        console.log('dealer hand', dealer.hand.map((card) => card.number))
-        players.forEach((player) => {
-            console.log(`${player.name} hand`, player.hand.map((card) => card.value))
-        })
+        // console.log('dealer hand', dealer.hand.map((card) => card.number))
+        // players.forEach((player) => {
+        //     console.log(`${player.name} hand`, player.hand.map((card) => card.value))
+        // })
         this.checkWin(dealer, players)
     }
 
@@ -134,8 +134,22 @@ class Table {
     }
 
     checkWin(dealer, players) {
-        console.log(this.handTotal(dealer.hand))
         const dealerHand = this.handTotal(dealer.hand)
+        // console.log('Dealer hand: ', dealerHand)
+        players.forEach( player => {
+            const playerHand = this.handTotal(player.hand)
+            // console.log(`${player.name} hand: `,playerHand)
+            if ((playerHand > 21) || ((playerHand < dealerHand) && (dealerHand <= 21))) {
+                console.log(`Lose! ${player.name} hand is: ${playerHand}; Dealer hand is: ${dealerHand}`)
+            }
+            else if (playerHand === dealerHand) {
+                console.log(`Tie! ${player.name} hand is: ${playerHand}; Dealer hand is: ${dealerHand}`)
+
+            }
+            else {
+                console.log(`Win! ${player.name} hand is: ${playerHand}; Dealer hand is: ${dealerHand}`)
+            }
+        } )
     }
 }
 
