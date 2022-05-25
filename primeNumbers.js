@@ -2,7 +2,7 @@
 
 
 function primeFactors(n){
-  for (let i=2, res="", f; i <= n; i++) {
+  for (let i=2, res="",l f; i <= n; i++) {
     f=0;
     while (n%i == 0) {
         f++; n/=i 
