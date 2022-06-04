@@ -13,6 +13,6 @@ function validParentheses(parens) {
             return false
         }
     }
-    return true
+    return cntr === 0 ? true : false
   }
-console.log(validParentheses( "()"))
+console.log(validParentheses( "("))
